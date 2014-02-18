@@ -1,0 +1,57 @@
+@prefix ap: <https://raw.github.com/acka47/vocabs/master/ap.ttl> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/Document> .
+@prefix oo: <http://purl.org/openorg/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix status: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# About the Application Profile (AP) vocabulary
+
+<https://raw.github.com/acka47/vocabs/master/ap.ttl>
+    rdf:type owl:Ontology , voaf:Vocabulary ;
+    vann:preferredNamespacePrefix "ap" ;
+    dct:title "Application Profile Vocabulary" ;
+    dct:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:description "This is a provisional, testing, proposed vocabulary for enabling the expression of an application profile in RDF."@en ;
+    dct:issued "2014-02-18" ;
+    dct:creator <http://lobid.org/person/ap> ;
+    oo:contact <mailto:pohl@hbz-nrw.de> .
+
+<https://raw.github.com/acka47/vocabs/master/ap.ttl#ApplicationProfile>
+    a owl:Class ;
+    rdfs:label "Application Profile"@en , "Anwendungsprofil"@de ;
+    rdfs:comment "An application profile as defined by the DCMI Metadata Initiative."@en ;
+    rdfs:isDefinedBy <https://raw.github.com/acka47/vocabs/master/ap.ttl> ;
+    rdfs:subClassOf foaf:Document ;
+    status:term_status "testing" .
+
+<https://raw.github.com/acka47/vocabs/master/ap.ttl#cardinality>
+    a owl:DatatypeProperty ;
+    rdfs:label "Cardinality"@en , "Kardinalität"@de ;
+    rdfs:comment "Used to indicate the exact cardinality of a data element in an application profile. The value allowed for this property is a nonNegativeInteger data value from the XML Schema datatypes."@en ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger ;
+    status:term_status "testing" .
+
+<https://raw.github.com/acka47/vocabs/master/ap.ttl#minCardinality>
+    a owl:DatatypeProperty ;
+    rdfs:label "Minimum Cardinality"@en , "Mindestkardinalität"@de ;
+    rdfs:comment "Used to indicate the minimum cardinality of a data element in an application profile. The value allowed for this property is a nonNegativeInteger data value from the XML Schema datatypes. "@en ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger ;
+    status:term_status "testing" .
+
+<https://raw.github.com/acka47/vocabs/master/ap.ttl#maxCardinality>
+    a owl:DatatypeProperty ;
+    rdfs:label "Maximum Cardinality"@en , "Maximumkardinalität"@de ;
+    rdfs:comment "Used to indicate the maximum cardinality of a data element in an application profile. The value allowed for this property is a nonNegativeInteger data value from the XML Schema datatypes. If no maximum cardinality is given, the property is supposed to be repeatable indefinetely."@en ;
+    rdfs:domain rdf:Property ;
+    rdfs:range xsd:nonNegativeInteger ;
+    status:term_status "testing" .
+
+
